@@ -11,7 +11,9 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadoww-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2); }
 
 *,
 *::before,
@@ -49,7 +51,7 @@ body {
   font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--border-bottom);
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -65,8 +67,27 @@ body {
   flex: 0 0 18%; }
 
 .hotel-view {
+  flex: 1; }
+
+.detail {
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+  display: flex;
+  padding: 4.5rem; }
+
+.description {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  font-size: 1.4rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  padding: 3rem; }
+
+.user-reviews {
+  background-color: yellowgreen;
+  box-shadow: var(--shadow-light);
   flex: 1;
-  height: 80rem; }
+  padding: 3rem; }
 
 .logo {
   height: 3.25rem;
@@ -200,7 +221,7 @@ body {
     width: 100%; }
 
 .overview {
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
   display: flex;
   align-items: center; }
   .overview__heading {
@@ -267,3 +288,45 @@ body {
   100% {
     transform: scale(1);
     box-shadow: none; } }
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap; }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: .7rem; }
+  .list__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: .7rem;
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover; }
+
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center; }
+  .recommend__count {
+    margin-right: auto; }
+  .recommend__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid white; }
+    .recommend__photo:not(:last-child) {
+      margin-right: -1.55rem; }
