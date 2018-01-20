@@ -79,7 +79,7 @@
   }
 
   & > *:hover {
-    background: var(--color-grey-light-2);
+    background: var(--color-primary-light-1);
   }
 
   &__icon-box{
@@ -191,4 +191,125 @@
   font-size: 1.2rem;
   padding: 2.5rem;
   text-align: center;
+}
+
+///////////////////////////
+/////GALLERY
+
+.gallery {
+  display:flex;
+  &__photo {
+    display: block;
+    width: 100%;
+  }
+}
+
+///////////////////////////
+/////OVERVIEW 
+
+
+.overview {
+  border-bottom: 1px solid var(--color-grey-light-2);
+  display: flex;
+  align-items: center;
+  
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+    text-transform: uppercase;
+  }
+
+  &__stars {
+    display:flex;
+    margin-right: auto;
+  }
+  &__icon-star,
+  &__location--icon{
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    align-items: center;
+    display:flex;
+    font-size: 1.2rem;
+
+    &--icon {
+      margin-right: .5rem;
+    }
+  }
+
+
+  &__rating {
+    
+    align-self: stretch;
+    background-color: var(--color-primary);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 3rem;
+    padding: 0 2.25rem;
+    
+
+
+    &--count {
+      font-size: .8rem;
+      text-transform: uppercase;
+    }
+
+    &--average {
+      color: var(--color-grey-light-1);
+      font-size: 2.25rem;
+      font-weight: 300;
+      margin-bottom: -3px;
+    }
+  }
+
+
+}
+
+///////////////////////////
+/////BUTTON INLINE 
+
+.btn-inline {
+  background-color: transparent;
+  border: none;
+  border-bottom: currentColor 1px solid;
+  cursor: pointer;
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: inherit;
+  padding: 2px;
+  transition: all .2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:focus {
+    animation: pulsate 1s infinite;
+    outline:none;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0,0,0, .25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;   
+  }
 }
