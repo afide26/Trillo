@@ -365,7 +365,13 @@
   &__item {
     flex: 0 0 50%;
     margin-bottom: .7rem;
+    
+    @media only screen and (max-width:$bp-medium){
+      flex: 0 0 100;
+    }
   }
+
+
 
   &__item::before {
     content:"";
@@ -398,7 +404,9 @@
   &__count {
     margin-right: auto;
   }
-
+  &__friends{
+    display: flex;
+  }
   &__photo {
     box-sizing: content-box;
     height: 4rem;
